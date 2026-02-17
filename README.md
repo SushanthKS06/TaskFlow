@@ -27,13 +27,13 @@ Please find the detailed documentation for all requested deliverables in the `do
 
 | Deliverable | Document |
 |:------------|:---------|
-| **Frontend Architecture** | [📖 Frontend Architecture](docs/ARCHITECTURE.md#frontend-architecture) |
-| **Backend Architecture** | [📖 Backend Architecture](docs/ARCHITECTURE.md#backend-architecture) |
-| **Database Schema** | [🗄️ Database Schema Diagram](docs/DATABASE_SCHEMA.md) |
-| **API Contract** | [🔌 API Documentation](docs/API_DOCUMENTATION.md) |
-| **Real-time Strategy** | [⚡ Real-time Sync Strategy](docs/REALTIME_SYNC.md) |
-| **Scalability** | [📈 Scalability Considerations](docs/SCALABILITY.md) |
-| **Assumptions & Trade-offs** | [⚖️ Assumptions and Trade-offs](docs/ASSUMPTIONS_AND_TRADEOFFS.md) |
+| **Frontend Architecture** | [Frontend Architecture](docs/ARCHITECTURE.md#frontend-architecture) |
+| **Backend Architecture** | [Backend Architecture](docs/ARCHITECTURE.md#backend-architecture) |
+| **Database Schema** | [Database Schema Diagram](docs/DATABASE_SCHEMA.md) |
+| **API Contract** | [API Documentation](docs/API_DOCUMENTATION.md) |
+| **Real-time Strategy** | [Real-time Sync Strategy](docs/REALTIME_SYNC.md) |
+| **Scalability** | [Scalability Considerations](docs/SCALABILITY.md) |
+| **Assumptions & Trade-offs** | [Assumptions and Trade-offs](docs/ASSUMPTIONS_AND_TRADEOFFS.md) |
 
 ---
 

@@ -8,7 +8,7 @@
 
 TaskFlow is a high-performance, real-time collaboration tool inspired by Trello and Notion. It enables teams to organize tasks visually, communicate instantly, and track progress effortlessly.
 
-## 🚀 Key Features
+## Key Features
 
 *   **Real-Time Collaboration**: Instant updates via Socket.IO/Redis. See changes as they happen.
 *   **Drag & Drop Interface**: Smooth, optimistic UI updates for moving tasks and lists (powered by `@dnd-kit`).
@@ -17,7 +17,7 @@ TaskFlow is a high-performance, real-time collaboration tool inspired by Trello 
 *   **Activity Logging**: Detailed audit trail for every action on the board.
 *   **Modern UI**: Glassmorphism design, dark mode, and responsive layout.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 *   **Framework**: NestJS (Node.js)
@@ -40,7 +40,7 @@ TaskFlow is a high-performance, real-time collaboration tool inspired by Trello 
 *   **CI/CD**: GitHub Actions
 *   **Reverse Proxy**: Nginx
 
-## 🏃‍♂️ Getting Started
+## Getting Started
 
 ### Prerequisites
 *   Docker & Docker Compose installed
@@ -97,7 +97,7 @@ TaskFlow is a high-performance, real-time collaboration tool inspired by Trello 
     npm run dev
     ```
 
-## 🧪 Testing
+## Testing
 
 ### Backend
 ```bash
@@ -112,7 +112,7 @@ cd frontend
 npm test        # Run Vitest
 ```
 
-## 📖 API Documentation
+## API Documentation
 
 The API follows RESTful conventions. Key endpoints:
 
@@ -121,7 +121,7 @@ The API follows RESTful conventions. Key endpoints:
 *   **Tasks**: `POST /api/tasks`, `PUT /api/tasks/:id/move`
 *   **Health**: `GET /api/health`
 
-## 🔒 Security & Scalability
+## Security & Scalability
 
 *   **Rate Limiting**: Global limit of 100 requests per minute per IP.
 *   **Security Headers**: Helmet middleware for XSS, clickjacking, and MIME-type sniffing protection.
@@ -130,5 +130,5 @@ The API follows RESTful conventions. Key endpoints:
 *   **Redis Adapter**: WebSocket events are broadcast via Redis, allowing the backend to scale horizontally across multiple instances.
 *   **Optimistic Updates**: The frontend UI updates immediately while the server processes the request, providing a snappy experience.
 
-## 📄 License
+## License
 MIT

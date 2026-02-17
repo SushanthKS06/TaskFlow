@@ -11,7 +11,7 @@ TaskFlow is a high-performance, real-time collaboration tool inspired by Trello.
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 *   **Real-Time Collaboration**: Instant updates across all clients using Socket.IO & Redis.
 *   **Kanban Board**: Smooth drag-and-drop interface powered by `@dnd-kit`.
@@ -21,7 +21,7 @@ TaskFlow is a high-performance, real-time collaboration tool inspired by Trello.
 
 ---
 
-## 📚 Documentation & Deliverables
+## Documentation & Deliverables
 
 Please find the detailed documentation for all requested deliverables in the `docs` folder:
 
@@ -37,7 +37,7 @@ Please find the detailed documentation for all requested deliverables in the `do
 
 ---
 
-## 🔑 Demo Credentials
+## Demo Credentials
 
 The database is automatically seeded with these users:
 
@@ -51,7 +51,7 @@ The database is automatically seeded with these users:
 
 ---
 
-## 🏃‍♂️ Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 *   **Docker & Docker Compose** (Recommended)
@@ -97,7 +97,7 @@ npm run dev
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 *   **Framework**: NestJS (Node.js)

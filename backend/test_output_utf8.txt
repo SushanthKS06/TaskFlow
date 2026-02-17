@@ -1,0 +1,1218 @@
+﻿
+> taskflow-backend@1.0.0 test:e2e
+> jest --config ./test/jest-e2e.json
+
+node.exe : FAIL test/app.e2e-spec.ts (14.772 
+s)
+At C:\Program Files\nodejs\npm.ps1:29 char:3
++   & $NODE_EXE $NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified    
+: (FAIL test/app.e2e-spec.ts (14.772 s    
+):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComman    
+dError
+ 
+  TaskFlow API (e2e)
+    POST /api/auth/signup
+      ├ù should create a new user and return 
+tokens (4 ms)
+      ├ù should reject duplicate email (1 ms)
+      ├ù should reject invalid email format 
+(1 ms)
+    POST /api/auth/login
+      ├ù should login with valid credentials
+      ├ù should reject invalid credentials
+    POST /api/auth/refresh
+      ├ù should return new tokens for valid 
+refresh token
+      ├ù should reject invalid refresh token
+    POST /api/boards
+      ├ù should reject unauthenticated 
+requests
+      ├ù should create a board (1 ms)
+    GET /api/boards
+      ├ù should return boards for 
+authenticated user
+    GET /api/boards/:id
+      ├ù should return board details with 
+lists and tasks
+      ├ù should return 404 for non-existent 
+board
+    POST /api/lists
+      ├ù should create a list in the board
+      ├ù should auto-increment position for 
+second list
+    POST /api/tasks
+      ├ù should create a task in the list
+    GET /api/tasks/:id
+      ├ù should return task details
+    PUT /api/tasks/:id
+      ├ù should update task title and priority
+    PUT /api/tasks/:id/move
+      ├ù should move task to another list
+    PUT /api/tasks/:id/assign
+      ├ù should assign user to task
+      ├ù should unassign by sending null
+    GET /api/tasks/search/:boardId
+      ├ù should find tasks by search query
+      ├ù should return empty results for 
+non-matching query
+    GET /api/activity/:boardId
+      ├ù should return activity logs with 
+pagination
+    DELETE /api/tasks/:id
+      ├ù should delete the task
+    DELETE /api/boards/:id
+      ├ù should delete the board (cascading 
+lists and tasks)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST 
+/api/auth/signup ΓÇ║ should create a new user 
+and return tokens
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST 
+/api/auth/signup ΓÇ║ should reject duplicate 
+email
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST 
+/api/auth/signup ΓÇ║ should reject invalid 
+email format
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST 
+/api/auth/login ΓÇ║ should login with valid 
+credentials
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST 
+/api/auth/login ΓÇ║ should reject invalid 
+credentials
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST 
+/api/auth/refresh ΓÇ║ should return new 
+tokens for valid refresh token
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST 
+/api/auth/refresh ΓÇ║ should reject invalid 
+refresh token
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST /api/boards 
+ΓÇ║ should reject unauthenticated requests
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST /api/boards 
+ΓÇ║ should create a board
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ GET /api/boards 
+ΓÇ║ should return boards for authenticated 
+user
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ GET 
+/api/boards/:id ΓÇ║ should return board 
+details with lists and tasks
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ GET 
+/api/boards/:id ΓÇ║ should return 404 for 
+non-existent board
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST /api/lists 
+ΓÇ║ should create a list in the board
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST /api/lists 
+ΓÇ║ should auto-increment position for second 
+list
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ POST /api/tasks 
+ΓÇ║ should create a task in the list
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ GET 
+/api/tasks/:id ΓÇ║ should return task details
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ PUT 
+/api/tasks/:id ΓÇ║ should update task title 
+and priority
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ PUT 
+/api/tasks/:id/move ΓÇ║ should move task to 
+another list
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ PUT 
+/api/tasks/:id/assign ΓÇ║ should assign user 
+to task
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ PUT 
+/api/tasks/:id/assign ΓÇ║ should unassign by 
+sending null
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ GET 
+/api/tasks/search/:boardId ΓÇ║ should find 
+tasks by search query
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ GET 
+/api/tasks/search/:boardId ΓÇ║ should return 
+empty results for non-matching query
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ GET 
+/api/activity/:boardId ΓÇ║ should return 
+activity logs with pagination
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ DELETE 
+/api/tasks/:id ΓÇ║ should delete the task
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+  ΓùÅ TaskFlow API (e2e) ΓÇ║ DELETE 
+/api/boards/:id ΓÇ║ should delete the board 
+(cascading lists and tasks)
+
+    PrismaClientInitializationError: 
+Authentication failed against database server 
+at `localhost`, the provided database 
+credentials for `postgres` are not valid.
+
+    Please make sure to provide valid 
+database credentials for the database server 
+at `localhost`.
+
+    [0m [90m  5 |[39m [36mexport[39m 
+[36mclass[39m [33mPrismaService[39m 
+[36mextends[39m [33mPrismaClient[39m 
+[36mimplements[39m 
+[33mOnModuleInit[39m[33m,[39m 
+[33mOnModuleDestroy[39m {
+     [90m  6 |[39m     [36masync[39m 
+onModuleInit() {
+    [31m[1m>[22m[39m[90m  7 |[39m       
+  [36mawait[39m 
+[36mthis[39m[33m.[39m$connect()[33m;[39m
+     [90m    |[39m         
+[31m[1m^[22m[39m
+     [90m  8 |[39m     }
+     [90m  9 |[39m
+     [90m 10 |[39m     [36masync[39m 
+onModuleDestroy() {[0m
+
+      at t (../node_modules/@prisma/client/run
+time/library.js:112:2488)
+      at Proxy.onModuleInit 
+(../src/prisma/prisma.service.ts:7:9)
+          at async Promise.all (index 0)
+      at callModuleInitHook (../node_modules/@
+nestjs/core/hooks/on-module-init.hook.js:43:5)
+      at Proxy.callInitHook (../node_modules/@
+nestjs/core/nest-application-context.js:234:13
+)
+      at Proxy.init (../node_modules/@nestjs/c
+ore/nest-application.js:100:9)
+      at Object.<anonymous> 
+(app.e2e-spec.ts:43:9)
+
+Test Suites: 1 failed, 1 total
+Tests:       25 failed, 25 total
+Snapshots:   0 total
+Time:        16.085 s, estimated 26 s
+Ran all test suites.

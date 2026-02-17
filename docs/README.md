@@ -1,6 +1,6 @@
 # TaskFlow Documentation Index
 
-## 📚 Complete Documentation
+## Complete Documentation
 
 ### Architecture & Design
 - **[ARCHITECTURE.md](./ARCHITECTURE.md)** - System architecture, frontend/backend design, request flow
@@ -33,7 +33,7 @@
 - ✅ Combined logs: `backend/logs/combined.log`
 - ✅ Console logging with timestamps and colors
 
-## 🚀 Quick Links
+## Quick Links
 
 | Topic | Document |
 |-------|----------|
@@ -45,7 +45,7 @@
 | Scaling | [SCALABILITY.md](./SCALABILITY.md) |
 | Migrations | [MIGRATION_ROLLBACK.md](./MIGRATION_ROLLBACK.md) |
 
-## 📊 Test Coverage
+## Test Coverage
 
 ### Backend
 - Auth service: ✅ 100%
@@ -61,7 +61,7 @@
 - useSocket hook: ✅ Tested
 - DashboardPage: ✅ Tested
 
-## 🔧 Development Workflow
+## Development Workflow
 
 1. **Setup**: Follow [README.md](../README.md) for installation
 2. **Database**: Use [MIGRATION_ROLLBACK.md](./MIGRATION_ROLLBACK.md) for schema changes
@@ -69,7 +69,7 @@
 4. **Testing**: Run `npm test` in backend and frontend
 5. **Deployment**: Use Docker Compose as documented in README
 
-## 📝 Contributing Guidelines
+## Contributing Guidelines
 
 - Write tests for new features
 - Update documentation when changing APIs
@@ -77,7 +77,7 @@
 - Create database backups before migrations
 - Use Winston logger for error tracking
 
-## 🎯 Production Checklist
+## Production Checklist
 
 - [ ] Environment variables configured
 - [ ] Database backups scheduled
@@ -88,7 +88,7 @@
 - [ ] SSL/TLS certificates installed
 - [ ] Health check endpoint tested
 
-## 📞 Support
+## Support
 
 For issues or questions:
 1. Check relevant documentation above
